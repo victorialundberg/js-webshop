@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Yes We Candy!</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Yes We Candy!</h1>
+            <button id="cartBtn" class="cart-Btn" aria-label="Shopping Cart">
+                <svg fill="#000000" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                width="50" height="50" viewBox="-100 -100 1002.86 1002.86"
+                xml:space="preserve" role="img">
+                <title>Shopping Cart</title>
+           <g>
+               <g>
+                   <path d="M671.504,577.829l110.485-432.609H902.86v-68H729.174L703.128,179.2L0,178.697l74.753,399.129h596.751V577.829z
+                        M685.766,247.188l-67.077,262.64H131.199L81.928,246.756L685.766,247.188z">
+                       <animateTransform id="cartAnimation1" attributeType="xml" attributeName="transform" type="rotate" from="0 451 451"
+                                         to="360 451 451" dur="2s" additive="sum" repeatCount="1" begin="indefinite"/>
+                   </path>
+                       <path d="M578.418,825.641c59.961,0,108.743-48.783,108.743-108.744s-48.782-108.742-108.743-108.742H168.717
+                       c-59.961,0-108.744,48.781-108.744,108.742s48.782,108.744,108.744,108.744c59.962,0,108.743-48.783,108.743-108.744
+                       c0-14.4-2.821-28.152-7.927-40.742h208.069c-5.107,12.59-7.928,26.342-7.928,40.742
+                       C469.675,776.858,518.457,825.641,578.418,825.641z M209.46,716.897c0,22.467-18.277,40.744-40.743,40.744
+                       c-22.466,0-40.744-18.277-40.744-40.744c0-22.465,18.277-40.742,40.744-40.742C191.183,676.155,209.46,694.432,209.46,716.897z
+                        M619.162,716.897c0,22.467-18.277,40.744-40.743,40.744s-40.743-18.277-40.743-40.744c0-22.465,18.277-40.742,40.743-40.742
+                       S619.162,694.432,619.162,716.897z">
+                           <animateTransform id="cartAnimation2" attributeType="xml" attributeName="transform" type="rotate" from="360 451 451"
+                                             to="0 451 451" dur="1s" additive="sum" repeatCount="2" begin="indefinite"/>
+           
+                   </path>
+               </g>
+           </g>
+           </svg>
+            </button>
+            <div class="sum-display" id="sumDisplay">0 SEK</div>
+            <button id="closeCartBtn" class="close-cart-btn hidden" type="button">- Close Shopping Cart -</button>
+        </nav>
+        <div id="shoppingCartContainer" class="shopping-cart-container"></div>
+    </header>
+    <main>
+        <div id="sortingContainer" class="sorting-container">
+            <button id="sortNameBtn" class="sort" aria-label="sortByName">Name <span class="material-symbols-outlined">sync_alt</span></button>
+            <button id="sortCategoryBtn" class="sort" aria-label="sortByCategory">Category <span
+                    class="material-symbols-outlined">sync_alt</span></button>
+            <button id="sortPriceBtn" class="sort" aria-label="sortByPrice">Price <span
+                    class="material-symbols-outlined">sync_alt</span></button>
+            <button id="sortRatingBtn" class="sort" aria-label="sortByRating">Rating <span
+                    class="material-symbols-outlined">sync_alt</span></button>
+        </div>
+        <div id="productContainer"></div>
+
+        <form id="informationForm">
+            <fieldset id="customerInfo" class="customer-info">
+                <div class="first-name-container hideError">
+                    <label>First Name:</label>
+                    <input type="text" name="firstName" id="firstName" placeholder="First Name">
+                    <span class="error-message">Oops! Something is not right here</span>
+                </div>
+                <div class="last-name-container hideError">
+                    <label>Last Name:</label>
+                    <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+                    <span class="error-message">Oops! Something is not right here</span>
+                </div>
+                <div class="street-container hideError">
+                    <label>Street:</label>
+                    <input type="text" name="street" id="street" placeholder="Street Avenue 25">
+                    <span class="error-message">Oops! Something is not right here</span>
+                </div>
+                <div class="door-code-container">
+                    <label>Door Code:</label>
+                    <input type="text" name="doorCode" id="doorCode" placeholder="8921">
+                </div>
+                <div class="zip-code-container hideError">
+                    <label>Zip Code:</label>
+                    <input type="text" name="zipCode" id="zipCode" placeholder="123 45">
+                    <span class="error-message">Oops! Something is not right here</span>
+                </div>
+                <div class="city-container hideError">
+                    <label>City:</label>
+                    <input type="text" name="city" id="city" placeholder="City-Townia">
+                    <span class="error-message">Oops! Something is not right here</span>
+                </div>
+                <div class="email-container hideError">
+                    <label>Email:</label>
+                    <input type="text" name="email" id="email" placeholder="name@gmail.com">
+                    <span class="error-message">Oops! Something is not right here</span>
+                </div>
+                <div class="phone-container hideError">
+                    <label>Phone:</label>
+                    <input type="text" name="phone" id="phone" placeholder="+46 12 345 67 89">
+                    <span class="error-message">Oops! Something is not right here</span>
+                </div>
+            </fieldset>
+            
+            <div id="paymentMethodBtns">
+                <span>Choose Payment Method:</span>
+                <div class="payment-method-container">
+                    <label>Invoice
+                    <input type="radio" name="paymentMethod" id="invoiceRadioBtn">
+                    </label>
+
+                    <label>Credit Card
+                    <input type="radio" name="paymentMethod" id="cardRadioBtn">
+                    </label>
+                </div>
+            </div>
+
+            <fieldset id="payByCard" class="hidden">
+                <legend>Credit Card Info</legend>
+                <div class="card-number-container hideError">
+                    <label>Card Number:</label>
+                    <input type="text" name="cardNumber" class="card-info" id="cardNumber" placeholder="1234 2345 3456 4567">
+                    <span class="error-message">Oops! Something is not right here</span>
+                </div>
+                <div class="card-holder-container hideError">
+                    <label>Card Holder:</label>
+                    <input type="text" name="cardHolder" class="card-info" id="cardHolder" placeholder="First Name Last Name">
+                    <span class="error-message">Oops! Something is not right here</span>
+                </div>
+                <div class="card-expiration-container hideError">
+                    <label>MM/YY</label>
+                        <input type="number" class="card-info" placeholder="MM" id="creditCardMonth">/
+                        <input type="number" class="card-info" placeholder="YY" id="creditCardYear">
+                    <span class="error-message">Oops! Something is not right here</span>
+                </div>  
+                <div class="cvc-container hideError">
+                    <label>CVC</label>
+                    <input type="text" name="cvc" class="card-info" id="cvc" placeholder="123">
+                    <span class="error-message">Oops! Something is not right here</span>
+                </div>
+            </fieldset>
+
+            <fieldset id="payByInvoice" class="hidden">
+                <legend>Invoice</legend>
+                <div class="social-security-container hideError">
+                    <label>Social security number:</label>
+                    <input type="text" name="socialSecurity" id="socialSecurity" placeholder="20061219-1234">
+                    <span class="error-message">Oops! Something is not right here</span>
+                </div>
+            </fieldset>
+
+            <div class="discount-container">
+                <label>Discount code:</label>
+                <input type="text" name="discount" id="discount">
+                <button type="button" id="addDiscountCode">Add discount code</button>
+                <span id="discountMessage" class="hideError">Sorry, invlaid discount code</span>
+            </div>
+            
+            <div class="newsletter-container">
+                <input type="checkbox" name="newsletter" id="newsletter" checked>
+                <label>Newsletter? Yes, please!</label>
+            </div>
+
+            <div class="gdpr-container hideError">
+                <input type="checkbox" name="gdpr" id="gdpr">
+                <label>I agree to the terms and conditions.</label>
+            </div>
+            <div class="form-btns-container">
+                <button type="button" id="sendForm" disabled>Send</button>
+                <button type="button" id="resetForm">Clear</button>
+            </div>
+
+            <dialog id="clearOrder">
+                <p>Are you sure you want to clear the entire order?</p>
+                <button type="button" id="noReturn">No</button>
+                <button type="button" id="yesClear">Yes</button>
+            </dialog>
+
+        </form>
+
+        <dialog id="dialog" class="dialog">
+            <p>If you snooze you lose!</p>
+            <p>You need to place your order within 15 minutes.</p>
+            <button id="dialogBtn" class="dialogBtn">Allrighty then!</button>
+        </dialog>
+
+        <dialog id="orderSummary" class="orderSummary">
+            <h3>Thank you for your order!</h3>
+            <div id="orderSummaryContainer" class="orderSummaryContainer"></div>
+            <div id="shippingInfoContainer" class="shippingInfoContainer"></div>
+            <button id="orderSummaryBtn" class="orderSummaryBtn">OK</button>
+        </dialog>
+
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

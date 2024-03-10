@@ -1,0 +1,4 @@
+@use "layout/_base";
+@media (prefers-color-scheme: dark) {
+    @import "layout/_dark.scss";
+}
